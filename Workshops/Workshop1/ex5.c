@@ -46,6 +46,6 @@ int main() {
 	
 	
 	printf("\n|%-10s |%-10s |%-10s\n", "Km", "Time", "Tong");
-	printf("|%-10.1f |%-10.1f |%-10.3f", distant, wt, price);
+	printf("|%-10f |%-10f |%-10.3f", distant, wt, price);
 	
 }
