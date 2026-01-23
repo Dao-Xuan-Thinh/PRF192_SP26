@@ -20,7 +20,7 @@ int main() {
 		wp = (wt-5);
 		
 	else
-		printf("");
+	printf(":3");
 	
 	//Total price
 	if(distant <= 30 && distant > 0.5){
@@ -46,6 +46,6 @@ int main() {
 	
 	
 	printf("\n|%-10s |%-10s |%-10s\n", "Km", "Time", "Tong");
-	printf("|%-10f |%-10f |%-10.3f", distant, wt, price);
+	printf("|%-10.0f |%-10.0f |%-10.3f", distant, wt, price);
 	
 }

@@ -1,31 +1,38 @@
 #include <stdio.h>
+
+//total score / turn 10 point scale to letter grade / use if statement to determine conditions to pass (no subjects under 4.0 and total != 0)
+
 int main(){
-	float cc , gk , ck;
-	char diemChu;
-	float dtb;
+	float diligent, midterm, final;
+	char letter_grade;
+	float total;
+
 	printf ("Diem chuyen can: ");
-	scanf ("%f",&cc);
+	scanf ("%f",&diligent);
 	printf ("Diem giua ki: ");
-	scanf ("%f",&gk);
+	scanf ("%f",&midterm);
 	printf ("Diem cuoi ky: ");
-	scanf ("%f",&ck);
-		if (cc < 4 || gk < 4 || ck < 4 || diemChu == 'F'){
-		printf("Khong du dieu kien tot nghiep!");
+	scanf ("%f",&final);
+		if (diligent < 4 || midterm < 4 || final < 4 || letter_grade == 'F'){
+		printf("Vui long nop lai 5 trieu!");
 		return 0;
 		}
-	dtb = (cc*0.1)+(gk*0.3)+(ck*0.6);
-	if (dtb>=8.5 && dtb <=10){
-		diemChu = 'A';
-	}else if (dtb>=7){
-		diemChu ='B';
-	}else if (dtb>=5.5){
-		diemChu ='C';
-	}else if (dtb>=4){
-		diemChu ='D';
-	}else{
-		diemChu ='F';
-	}
-	printf("Diem chu la: %c",diemChu);
+
+	total = (diligent*0.1)+(midterm*0.3)+(final*0.6);
+
+	if (total>=8.5 && total<=10){
+		letter_grade = 'A';}
+	else if (total>=7){
+		letter_grade = 'B';}
+	else if (total>=5.5){
+		letter_grade = 'C';}
+	else if (total>=4){
+		letter_grade = 'D';}
+	else{
+		letter_grade = 'F';}
+	
+	printf("Diem cua ban la: %c",letter_grade);
+	printf("\nHay qua qua mon roi!");
 
 	return 0;
 }
