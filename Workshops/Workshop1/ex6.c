@@ -3,17 +3,17 @@
 //total score / turn 10 point scale to letter grade / use if statement to determine conditions to pass (no subjects under 4.0 and total != 0)
 
 int main(){
-	float diligent, midterm, final;
+	float diligent, midterm, final, total;
 	char letter_grade;
-	float total;
 
-	printf ("Diem chuyen can: ");
-	scanf ("%f",&diligent);
-	printf ("Diem giua ki: ");
-	scanf ("%f",&midterm);
-	printf ("Diem cuoi ky: ");
-	scanf ("%f",&final);
-		if (diligent < 4 || midterm < 4 || final < 4 || letter_grade == 'F'){
+	printf ("Diem chuyen can - Diem giua ki - Diem cuoi ky : ");
+	if (scanf("%f %f %f", &diligent, &midterm, &final) != 3){
+		printf("So khong hop le");
+		return 0;
+	}
+	
+	
+	if (diligent < 4 || midterm < 4 || final < 4 || letter_grade == 'F'){
 		printf("Vui long nop lai 5 trieu!");
 		return 0;
 		}
@@ -22,14 +22,19 @@ int main(){
 
 	if (total>=8.5 && total<=10){
 		letter_grade = 'A';}
+		
 	else if (total>=7){
 		letter_grade = 'B';}
+		
 	else if (total>=5.5){
 		letter_grade = 'C';}
+		
 	else if (total>=4){
 		letter_grade = 'D';}
+		
 	else{
 		letter_grade = 'F';}
+		
 	
 	printf("Diem cua ban la: %c",letter_grade);
 	printf("\nHay qua qua mon roi!");
