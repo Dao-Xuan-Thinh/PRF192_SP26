@@ -1,0 +1,2 @@
+#include<stdio.h>
+int main(){char p;int a,b;float k;scanf("%d,%d",&a,&b);if(scanf(" %c",&p)!=1)return!printf("Khong hop le");switch(p){case '+':k=a+b;break;case '-':k=a-b;break;case '*':k=a*b;break;case '/':if(!b)return!printf("Khong the chia cho 0");k=(float)a/b;break;case '%':if(!b)return!printf("Khong the chia cho 0");k=a%b;break;default:return!printf("Khong hop le");}p=='/'?printf("%d %c %d = %.02f",a,p,b,k):printf("%d %c %d = %.0f",a,p,b,k);}
