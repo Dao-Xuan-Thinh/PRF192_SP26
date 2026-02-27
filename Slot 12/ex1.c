@@ -1,7 +1,14 @@
 #include<stdio.h>
 
-//
+//Call Functions
 
+
+
+//Functions
 int Total(){
-    int total
+    int n, total
+    for(int i = 1; i >= n; i++){
+        if(n%)
+    }
+
 }
