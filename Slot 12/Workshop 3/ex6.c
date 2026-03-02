@@ -5,7 +5,7 @@
 
 //Funcs
 void play_game() {
-	int guess, goal, attempt = 1;
+	int guess, goal, attempt = 0;
 
 	srand(time(NULL));
 	goal = rand() % 100 + 1;

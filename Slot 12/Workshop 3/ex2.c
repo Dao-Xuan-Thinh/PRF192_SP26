@@ -3,7 +3,7 @@
 
 
 //Functions
-int Taxi_Fee(float distance){
+float calculate_taxi_fare(float distance){
 	float fee = 0;
 	if (distance <= 1) {
 		fee = 15;
@@ -39,7 +39,7 @@ int main(){
     float distance, total;
     printf("Nhap khoang cach : ");
     distance = InputCheck();
-    total = Taxi_Fee(distance);
+    total = calculate_taxi_fare(distance);
     printf("Tong so tien la: %.2fk", total);
     return 0;
 }

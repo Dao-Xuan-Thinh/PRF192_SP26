@@ -4,7 +4,7 @@ float a, b, fcheck,result;
 int input, check;
 
 //Funcs
-void Menu(){
+void show_menu(){
     printf("\n1. Cong | +");
     printf("\n2. Tru  | -");
     printf("\n3. Nhan | *");
@@ -13,7 +13,7 @@ void Menu(){
     printf("Hay nhap so de chon function\n> ");
 }
 
-float Cal(float a, float b, int input){
+float processor(float a, float b, int input){
     switch(input){
         case 1:
             result = a + b;
@@ -50,7 +50,7 @@ float NumCheck(){
 //Codes
 int main(){
     do{
-        Menu();
+        show_menu();
         input = InputCheck();
         if(input == 0){
             printf("Cam on ban da dung chuong trinh");
@@ -60,8 +60,8 @@ int main(){
         a = NumCheck();
         printf("b> ");
         b = NumCheck();
-        result = Cal(a, b, input);
-        printf("\nKet qua la: %.2f", result);
+        result = processor(a, b, input);
+        printf("\nKet qua la: %.2f\n", result);
     } while(input != 0);
 
     return 0;

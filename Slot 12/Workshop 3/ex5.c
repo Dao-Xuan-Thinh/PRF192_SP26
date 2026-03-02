@@ -4,7 +4,7 @@
 int a, b, prime, number, check;
 
 //Funcs
-int PrimeCheck(int number){
+int is_prime(int number){
     if(number <= 1){
         return 0;
     }
@@ -27,9 +27,9 @@ int InputCheck(){
 
 //Codes
 int main(){
-    printf("Hay nhap a:");
+    printf("Hay nhap a: ");
     a = InputCheck();
-    printf("Hay nhap b:");
+    printf("Hay nhap b: ");
     b = InputCheck();
 
     for(number = a; number <= b; number++){
@@ -37,9 +37,9 @@ int main(){
             continue;
         }
 
-        int temp = PrimeCheck(number);
+        int temp = is_prime(number);
         if(temp == 1){
-            printf("%d", number);
+            printf("%d | ", number);
         }
     }
 }

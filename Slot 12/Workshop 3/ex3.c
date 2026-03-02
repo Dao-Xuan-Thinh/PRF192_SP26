@@ -2,7 +2,7 @@
 #include<stdio.h>
 
 //Funcs
-float SalaryCal(float hour){
+float calculate_salary(float hour){
     float salary = 0;
     float pay = 22.700;
 
@@ -30,6 +30,6 @@ int main(){
     float hour, salary;
     printf("Nhap so gio lam viec : ");
     hour = InputCheck();
-    salary = SalaryCal(hour);
+    salary = calculate_salary(hour);
     printf("\nLuong cua ban sau %.1f tieng la : %.2fk", hour, salary);
 }
