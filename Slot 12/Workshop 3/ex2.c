@@ -24,7 +24,6 @@ float calculate_taxi_fare(float distance){
 //         }
 //         while(i > 1 && )
 
-
 float InputCheck(){
     float check;
     while(scanf("%f", &check) != 1){
