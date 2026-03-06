@@ -13,17 +13,27 @@
  * @param matrix: Input 2D integer array.
  * @param result: Output 1D int array to store the min element
  */
-void findRowMin(int matrix[ROWS][COLS], int result[COLS]) {
+void findRowMin(int a[ROWS][COLS], int result[COLS]) {
     // Your logic here
-    
+    for (int i = 0; i < ROWS; i++){
+      int min = a[i][0];
+      
+      for (int j = 1; j < COLS; j++){
+        if (a[i][j] < min){
+          min = a[i][j];
+        }
+      }
+      result[i] = min;
+    }
 }
 
 /**
  * TODO: Implement the function to display the result array.
  */
 void displayResults(int result[ROWS]) {
-    
-    
+    for (int i = 0; i < ROWS; i++){
+      printf("%d\n", result[i]);
+    }
 }
 int main() {
   system("cls");
@@ -40,7 +50,7 @@ int main() {
     printf("Ma tran da nhap: \n");
     for (int i = 0; i < ROWS; i++){
       for (int j = 0; j < COLS; j++){
-        printf("%d", a[i][j]);
+        printf("%d ", a[i][j]);
       }
       printf("\n");
     }
@@ -48,7 +58,9 @@ int main() {
   	
     // OUTPUT: Hiển thị kết quả ra màn hình
   printf("\nOUTPUT:\n");
-
+    int result[ROWS];
+    findRowMin(a, result);
+    displayResults(result);
 
 
 
