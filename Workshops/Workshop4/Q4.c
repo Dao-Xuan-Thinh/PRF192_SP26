@@ -64,7 +64,7 @@ int main() {
     printf("Not found\n");
   }
   
-  
+  printf("\n");
   //--FIXED PART - DO NOT EDIT ANY THINGS HERE  
   system ("pause");
   return(0);
