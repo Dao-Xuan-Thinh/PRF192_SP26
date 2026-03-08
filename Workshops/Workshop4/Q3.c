@@ -9,8 +9,9 @@ int main() {
   printf("INPUT:\n");
   //INPUT - @STUDENT:ADD YOUR CODE FOR INPUT HERE:
   int n, flag_invalid = 0;
-  if(scanf("%d", &n) != 1 || n < 0){
+  if(scanf("%d", &n) != 1 || n <= 0){
     flag_invalid = 1;
+    n = 0;
   }
 
   int a[n];
