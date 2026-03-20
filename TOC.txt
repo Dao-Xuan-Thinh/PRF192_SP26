@@ -1,0 +1,483 @@
+================================================================================
+  PRF192 - C Programming Homework  |  TABLE OF CONTENTS / CHEATSHEET
+  ~150+ functions | ~159 .c files across Slot 1-18, Workshops, Tests, Extra
+================================================================================
+
+HOW TO USE: Ctrl+F a keyword like "bubble sort", "prime", "linear search", etc.
+
+================================================================================
+  SLOT 1
+================================================================================
+Slot 1\HelloWorld.c
+  int main()  ->  Prints student name and age.
+
+================================================================================
+  SLOT 2
+================================================================================
+Slot 2\Task0.c
+  int main()  ->  Declares and prints two integers (10, 15).
+
+Slot 2\Task1.c
+  void main()          ->  Entry point (no return).
+  int task_1()         ->  Prints two integer variables with newlines.
+  int task_2()         ->  Prints a constant with zero-padding (%02d).
+  int task_3()         ->  Prints a float with width/precision formatting.
+
+Slot 2\task2.c
+  int main()  ->  Empty placeholder.
+
+Slot 2\Task3.c
+  int main()  ->  Arithmetic ops (+, -, *, /) with type casting for division.
+
+================================================================================
+  SLOT 3
+================================================================================
+Slot 3\ex1.c
+  int main()  ->  Arithmetic on 7 and 2 with formatted output + type cast.
+
+Slot 3\ex2.c
+  int main()  ->  sizeof table for char, int, long, float, double.
+
+================================================================================
+  SLOT 4  (Input / Math)
+================================================================================
+Slot 4\ex1.c
+  int main()  ->  Reads date (day/month/year) via scanf, prints zero-padded.
+
+Slot 4\ex2.c
+  int main()  ->  Reads a float, splits into integer and fractional parts.
+
+Slot 4\ex3.c
+  int main()  ->  Reads two ints + operator char, validates /0, computes result.
+
+Slot 4\ex4.c
+  int main()  ->  Reads int x, prints abs(x) and sqrt(x) using <math.h>.
+
+================================================================================
+  SLOT 5  (Conditionals / Switch)
+================================================================================
+Slot 5\ex1.c
+  int main()  ->  Max of 3 floats using nested if-else.
+
+Slot 5\ex2.c
+  int main()  ->  Max of 3 floats using compound conditions (&&, ||).
+
+Slot 5\ex3.c
+  int main()  ->  Electricity bill with tiered pricing via switch-case + if-else.
+
+Slot 5\ex4.c
+  int main()  ->  Reads month, uses switch-case to determine quarter (1-4).
+
+================================================================================
+  SLOT 7  (Switch / Calculator)
+================================================================================
+Slot 7\ex1.c
+  int main()  ->  Month -> quarter via switch fall-through cases.
+
+Slot 7\ex2.c
+  int main()  ->  Calculator: two numbers + operator, switch-case, /0 check.
+
+Slot 7\ex2-1.c
+  int main()  ->  Compact calculator using ternary operator.
+
+================================================================================
+  SLOT 9  (Binary File I/O + Structs)  *** FILE I/O ***
+================================================================================
+Slot 9\product_management.c
+  int idExists(int id)               ->  Checks if product ID already in binary file.
+  Product inputProduct(int num)      ->  Reads ID/name/price/qty from user (validated).
+  void writeProducts()               ->  Writes product records to binary file (wb).
+  void appendProducts()              ->  Appends products, skips duplicate IDs (ab).
+  void readProducts()                ->  Reads + displays all products in a table.
+  void modifyProduct()               ->  Searches by ID, updates record using fseek().
+  int main()                         ->  Menu (Write / Append / Read / Modify / Exit).
+
+  KEY PATTERNS:  fopen "wb"/"rb"/"r+b", fwrite, fread, fseek, sizeof(struct)
+
+================================================================================
+  SLOT 10  (Text File I/O + Structs + Bubble Sort)  *** SORTING / FILE I/O ***
+================================================================================
+Slot 10\student_management.c
+  int loadStudents(Student arr[])                   ->  Loads CSV file into array, returns count.
+  void saveStudents(Student arr[], int count)        ->  Saves array back to CSV file.
+  void printHeader()                                ->  Prints formatted table header.
+  void addStudent(const char *filename)             ->  Adds student, checks duplicate ID, validates GPA 0.0-4.0.
+  void displayStudents(const char *filename)        ->  Displays all students in table.
+  void searchStudentById(const char *filename, int id)
+                                                    ->  Linear search by ID.
+  void searchStudentByLastName(const char *filename, const char *lastName)
+                                                    ->  Case-insensitive search by last name.
+  void sortStudentsByLastName(const char *filename) ->  BUBBLE SORT by last name (strcmp), saves result.
+  int main()                                        ->  Menu (Add / Search ID / Search Name / Sort / Exit).
+
+  KEY PATTERNS:  fopen "r"/"w", fscanf, fprintf, fgets, bubble sort on strings (strcmp)
+
+================================================================================
+  SLOT 12  (Functions)
+================================================================================
+Slot 12\ex1.c
+  int Sum(int n)       ->  Sum of proper divisors of n (1 to n/2).
+  int InputCheck()     ->  Validates user input is a positive integer (loop).
+  int main()           ->  Calls InputCheck + Sum, prints result.
+
+Slot 12\ex2.c
+  int InputCheck()          ->  Input validation loop.
+  int FindMax(int a,int b,int c)  ->  Returns max of 3 integers via nested comparisons.
+  int main()                ->  Reads 3 nums, calls FindMax, prints result.
+
+Slot 12\ex3.c
+  void ASCIITable()    ->  Prints ASCII chars A-Z (65-90) in formatted table.
+  int main()           ->  Calls ASCIITable.
+
+================================================================================
+  SLOT 13  (Arrays / Pointers / Sorting / Searching)  *** CORE ALGORITHMS ***
+================================================================================
+Slot 13\ex0.c
+  void doubleX(int x)            ->  Pass-by-value demo (original unchanged).
+  void doubleX2(int *p)          ->  PASS-BY-POINTER: modifies original via pointer.
+  void inputA(int a[], int n)    ->  Reads n integers into array.
+  void outputArr(int a[], int n) ->  Prints array with indices.
+  int isPrime(int n)             ->  PRIME CHECK: loops up to n/2.
+  int countPrimes(int a[], int n)->  Counts primes in array.
+  int main()                     ->  Menu testing array ops and pointer demos.
+
+Slot 13\ex1.c  *** COMPLETE ARRAY MANAGER ***
+  void Menu()                        ->  Prints 8-option menu.
+  void InputArray(int a[], int n)    ->  Reads n ints into global array.
+  int Inputcheck()                   ->  Validates menu choice (0-7).
+  int NumCheck()                     ->  Validates number input.
+  int SearchArray(int n, int size)   ->  LINEAR SEARCH: returns index or -1.
+  int Remove_First(int a[], int size, int n)
+                                     ->  Removes first occurrence by left-shifting, returns new size.
+  int Remove_All(int a[], int n, int size)
+                                     ->  Removes ALL occurrences of value n.
+  void outputArray(int a[], int size)->  Displays array.
+  void out_ascen(int a[], int size)  ->  BUBBLE SORT ASCENDING (works on copy).
+  void out_descen(int a[], int size) ->  BUBBLE SORT DESCENDING (works on copy).
+  int main()                         ->  Menu-driven array manager.
+
+  KEY PATTERNS:  bubble sort asc/desc, linear search, element removal by shifting
+
+================================================================================
+  SLOT 16  (Strings / Pointers)
+================================================================================
+Slot 16\ex1.c
+  int VowelCount(char input[])  ->  Counts lowercase vowels (a,e,i,o,u).
+  int main()                    ->  Reads string, prints vowel count.
+
+Slot 16\ex2.c
+  int VowelCount(char input[])  ->  CASE-INSENSITIVE vowel count using tolower() + pointer arithmetic.
+  int main()                    ->  fgets version.
+
+Slot 16\ex3.c
+  void Reverse(char input[])    ->  Reverses string by swapping start/end chars (index-based).
+  int main()                    ->  Reads string, reverses, prints.
+
+Slot 16\ex4.c
+  void Reverse(char input[])    ->  POINTER-BASED STRING REVERSAL using start/end pointers + swap.
+  int main()                    ->  Reads string, reverses, prints.
+
+Slot 16\ex5.c
+  int swap2(int *a, int *b)          ->  SWAP TWO INTS via pointers (temp variable).
+  int swap3(int *a, int *b, int *c)  ->  ROTATE THREE INTS via pointers (3 5 7 -> 5 7 3).
+  int main()                         ->  Reads 3 nums, demos both swaps.
+
+================================================================================
+  SLOT 18  (Structs / Linear Search)
+================================================================================
+Slot 18\ex1.c
+  void nhapDiem(Point* a, int i)  ->  Reads x,y for a Point struct.
+  void inDiem(Point* a, int i)    ->  Prints y-coordinate.
+  int main()                      ->  Reads n Points, filters y > x, prints y values.
+
+Slot 18\ex2.c
+  int findID(Book *a, int n, int idTarget)  ->  LINEAR SEARCH through Book array by ID.
+  int maxPrice(Book *a, int n)              ->  Finds index of Book with highest price.
+  int main()                               ->  Reads books, searches ID, shows most expensive.
+
+Slot 18\ex3.c  (same as ex1 variant)
+  void nhapDiem(Point* a, int i)  ->  Reads Point coords.
+  void inDiem(Point* a, int i)    ->  Prints y-coordinate.
+  int main()                      ->  Filters points where y > x.
+
+Slot 18\ex4.c  (same as ex2 variant)
+  int findID(Book *a, int n, int idTarget)  ->  Linear search by ID.
+  int maxPrice(Book *a, int n)              ->  Max price index.
+  int main()                               ->  Reads books, searches, shows result.
+
+================================================================================
+  WORKSHOPS
+================================================================================
+
+--- Workshop 1  (Conditionals / Switch) ---
+Workshops\Workshop1\ex1.c   ->  abs + sqrt with conditional logic.
+Workshops\Workshop1\ex2.c   ->  Max of 3 floats (nested if-else).
+Workshops\Workshop1\ex3.c   ->  Max of 3 floats (compound conditions).
+Workshops\Workshop1\ex4.c   ->  Electricity bill with tiered switch-case.
+Workshops\Workshop1\ex5.c   ->  Taxi fare with distance-based pricing tiers.
+Workshops\Workshop1\ex6.c
+  int main()  ->  Grade calc: 3 scores (0.1+0.3+0.6 weights), all must >= 4.0, outputs letter grade.
+
+--- Workshop 2  (Loops / Recursion / Math) ---
+Workshops\Workshop2\ex1.c   ->  Reads float, validates, prints sqrt.
+Workshops\Workshop2\ex2.c   ->  Loop 5x: validate range (0 < n < 1000), print sqrt.
+Workshops\Workshop2\ex2.1.c ->  Infinite loop variant of ex2.
+Workshops\Workshop2\ex3.c   ->  Prints 1..n then multiplication table (n*1 to n*10).
+Workshops\Workshop2\ex4.c   ->  REVERSES DIGITS of number using modulo/division.
+Workshops\Workshop2\ex5.c   ->  Sums integers until 0 entered.
+Workshops\Workshop2\ex6.c
+  void Convert(int n)  ->  RECURSION: converts int to binary (divide by 2 recursively).
+  int main()           ->  Reads int, handles 0, calls Convert for binary output.
+Workshops\Workshop2\ex7.c   ->  Checks if n is a perfect square (i*i up to n).
+Workshops\Workshop2\ex8.c   ->  GCD via EUCLIDEAN ALGORITHM (while loop + mod).
+Workshops\Workshop2\ex9.c   ->  Number guessing game: rand 1-100, feedback higher/lower, counts attempts.
+Workshops\Workshop2\ex10.c  ->  ATM simulation: withdraw with balance validation loop.
+
+--- Workshop 3  (Functions) ---
+Workshops\Workshop 3\ex1.c
+  int is_leap_year(int year)              ->  Leap year check (divisible by 4).
+  int get_days_in_month(int month, int leap) ->  Days in month (handles Feb 28/29).
+  int InputCheck_M()                      ->  Validates month input (1-12).
+  int InputCheck_Y()                      ->  Validates positive year input.
+  int main()                              ->  Reads month/year, shows days in that month.
+
+Workshops\Workshop 3\ex2.c
+  float calculate_taxi_fare(float distance)  ->  Taxi fare with tiered rates.
+  float InputCheck()                         ->  Validates float input.
+  int main()                                 ->  Reads distance, prints fare.
+
+Workshops\Workshop 3\ex3.c
+  float calculate_salary(float hour)  ->  Salary with 1.5x overtime after 40 hours.
+  float InputCheck()                  ->  Validates float input.
+  int main()                          ->  Reads hours, prints salary.
+
+Workshops\Workshop 3\ex4.c
+  void show_menu()                        ->  Prints calculator menu.
+  float processor(float a, float b, int input)  ->  Performs +/-/*// based on input.
+  int InputCheck()                        ->  Validates menu choice (0-4).
+  float NumCheck()                        ->  Validates float input.
+  int main()                              ->  Calculator menu loop.
+
+Workshops\Workshop 3\ex5.c
+  int is_prime(int number)  ->  PRIME CHECK using sqrt() for efficiency.
+  int InputCheck()          ->  Validates input.
+  int main()                ->  Reads range a-b, prints all primes in that range.
+
+Workshops\Workshop 3\ex6.c
+  void play_game()  ->  Guessing game: max 6 attempts, random 1-100.
+  int main()        ->  Calls play_game.
+
+--- Workshop 4  (Arrays / 2D Arrays / Strings) ---
+Workshops\Workshop4\Q1.c  ->  Cube root of sqrt(a^2 + b^2) using pow() + cbrt().
+Workshops\Workshop4\Q2.c  ->  Distance between 2D points using sqrt + pow.
+Workshops\Workshop4\Q3.c  ->  Extracts even numbers, BUBBLE SORT DESCENDING, prints.
+Workshops\Workshop4\Q4.c  ->  Finds unique even numbers + their frequency counts.
+Workshops\Workshop4\Q5.c
+  void findRowSum(int a[ROWS][COLS], int result[ROWS])  ->  Sums each row of 2D matrix.
+  void displayResults(int result[ROWS])                 ->  Prints result array.
+  int main()                                            ->  Reads 2x3 matrix, shows row sums.
+Workshops\Workshop4\Q6.c
+  void filterString(char str[])  ->  Keeps only vowels in string (case-insensitive).
+  int main()                     ->  Reads string, filters, prints vowels.
+Workshops\Workshop4\Q7.c  ->  Prints asterisk pyramid pattern (1, 3, 5, ... stars/row).
+
+--- Workshop 5  (Strings) ---
+Workshops\Workshop 5\ex1.c  ->  String length using fgets + manual loop.
+Workshops\Workshop 5\ex2.c  ->  String reversal using loop from end to start.
+Workshops\Workshop 5\ex3.c  ->  PALINDROME CHECK: compare chars from start and end.
+Workshops\Workshop 5\ex4.c  ->  Counts spaces in string.
+Workshops\Workshop 5\ex5.c  ->  Replaces all occurrences of one char with another, counts replacements.
+Workshops\Workshop 5\ex6.c  ->  BUBBLE SORT on string array using strcmp.
+Workshops\Workshop 5\ex7.c  ->  Counts digits, letters, other chars using isdigit/isalpha.
+
+--- Old Workshop 3  (Loops - do-while variants) ---
+Workshops\Old Workshop3\ex1.c   ->  Finds and counts odd numbers 1-5.
+Workshops\Old Workshop3\ex2.c   ->  Sums user input until 0 (do-while).
+Workshops\Old Workshop3\ex2.2.c ->  Sums with running total display.
+Workshops\Old Workshop3\ex2.3.c ->  Nested loop for sqrt 5 times.
+Workshops\Old Workshop3\ex3.c   ->  Prints 1..n + multiplication table (for loop).
+Workshops\Old Workshop3\ex4.c   ->  Reverses digits (do-while).
+Workshops\Old Workshop3\ex5.c   ->  Perfect square check with do-while validation.
+Workshops\Old Workshop3\ex7.c   ->  sqrt with do-while input validation.
+
+================================================================================
+  PROGRESS TESTS
+================================================================================
+
+--- ProgressTest 1 ---
+ProgressTest\ProgressTest1\Q1.c  ->  Cube root of -b/a with a=0 error check.
+ProgressTest\ProgressTest1\Q2.c  ->  Sum of odd numbers in range [x, y].
+ProgressTest\ProgressTest1\Q3.c  ->  Series 1/1! + 1/2! + ... + 1/n! using factorial loop.
+ProgressTest\ProgressTest1\Q4.c  ->  Prints first n multiples of 3.
+
+--- ProgressTest 2 ---
+ProgressTest\ProgressTest2\Q1.c  ->  Finds indices of even numbers (linear search).
+ProgressTest\ProgressTest2\Q2.c
+  int isPrime(int n)              ->  Prime check using loop to sqrt(n).
+  int countPrimes(int a[], int size) ->  Counts primes in array.
+  int main()                      ->  Reads array, counts + shows primes.
+ProgressTest\ProgressTest2\Q3.c
+  void findRowMin(int a[ROWS][COLS], int result[COLS])  ->  Min element per row in 2D matrix.
+  void displayResults(int result[ROWS])                 ->  Prints result.
+  int main()                                            ->  Reads 2x3 matrix, prints row minimums.
+ProgressTest\ProgressTest2\Q22.c
+  int isPrime(int n)                   ->  Prime check.
+  int displayPrime(int a[], int size)  ->  Displays all primes or "Not found".
+  int main()                           ->  Reads array, displays primes.
+
+--- ProgressTest 3 ---
+ProgressTest\ProgressTest3\1\src\Q1.c  ->  Integer power using pow().
+ProgressTest\ProgressTest3\2\src\Q2.c  ->  sqrt with -1 error return for negatives.
+ProgressTest\ProgressTest3\3\src\Q3.c  ->  DIGIT SUM using abs() + modulo.
+ProgressTest\ProgressTest3\4\src\Q4.c
+  int findLargestEvenNumber(int a[], int n)  ->  Largest even in array, -1 if none.
+  int main()                                 ->  Reads array, prints result.
+ProgressTest\ProgressTest3\5\src\Q5.c
+  int findDifference(int a[], int n)  ->  Returns max - min of array.
+  int main()                          ->  Reads array, prints difference.
+ProgressTest\ProgressTest3\6\src\Q6.c
+  void swapMinMax(int a[], int n)  ->  SWAPS min and max elements in array.
+  int main()                       ->  Reads array, swaps min/max, prints.
+ProgressTest\ProgressTest3\7\Q7.c
+  int isPrime(int n)  ->  Prime check.
+  int main()          ->  Finds next 4 primes after input n.
+ProgressTest\ProgressTest3\8\Q8.c
+  int main()  ->  Capitalizes first 2 letters of each word in string.
+
+================================================================================
+  EXTRA  *** BEST CHEATSHEET FILES ***
+================================================================================
+
+Extra\coding_C.c  *** MASTER REFERENCE (300+ lines, 22 sections) ***
+  Covers:
+  - Data types, printf/scanf format specifiers (%d %f %s %c %lf %02d %.2f etc.)
+  - if/else, switch-case, ternary operator
+  - for / while / do-while loops, break, continue
+  - 1D and 2D arrays
+  - Strings: strlen, strcmp, strcpy, strcat, toupper, tolower, isdigit, isalpha
+  - Functions, prototypes, pass-by-value vs pass-by-pointer
+  - Pointers, pointer arithmetic, dereferencing
+  - Structs, typedef, arrays of structs, struct pointers
+  - Text file I/O (fopen, fclose, fprintf, fscanf, fgets, "r"/"w"/"a")
+  - Binary file I/O (fwrite, fread, fseek, "rb"/"wb"/"r+b")
+  - Dynamic memory: malloc, free
+  - BUBBLE SORT (ints and structs by name)
+  - LINEAR SEARCH
+  - Math: sqrt, pow, fabs, abs, cbrt, rand, srand
+  - Menu-driven program template
+  - Input validation patterns
+  - Common mistakes to avoid
+
+Extra\Cheatsheet.c  *** FUNCTION SNIPPET COLLECTION ***
+  void ValueBox()                        ->  Prints char in decimal/hex/octal/size formats.
+  int InputCheck()                       ->  Input validation loop.
+  int FlagInputCheck()                   ->  Returns flag for valid input.
+  int FindMax(int a, int b, int c)       ->  Max of 3 integers.
+  void ASCIITable()                      ->  Prints A-Z with ASCII codes.
+  int isPrime(int n)                     ->  Prime check.
+  int countPrimes(int a[], int n)        ->  Count primes in array.
+  void InputArray(int a[], int n)        ->  Reads n integers.
+  int SearchArray(int n, int size)       ->  LINEAR SEARCH, returns index or -1.
+  int Remove_First(int a[], int size, int n)  ->  Remove first occurrence (left-shift).
+  int Remove_All(int a[], int n, int size)    ->  Remove all occurrences.
+  void out_ascen(int a[], int size)      ->  BUBBLE SORT ASCENDING.
+  void out_descen(int a[], int size)     ->  BUBBLE SORT DESCENDING.
+  void BubbleSortDescending(int even[], int count)  ->  Bubble sort descending variant.
+  int ReverseNumber()                    ->  Reverses digits of input.
+  int isPerfectSquare()                  ->  Perfect square check.
+  void Convert(int n)                    ->  RECURSIVE binary conversion.
+  void filterString(char str[])          ->  Keep only vowels in string.
+  void InputSomething()                  ->  Read string with fgets.
+  void Fget_Lens()                       ->  Read string + calc length.
+  void ReverseString(char a[])           ->  Reverse string.
+
+Extra\smh.c
+  int* sole(int a, int n, int* spt)  ->  Extracts odd numbers into new array using pointer arithmetic.
+  void print_mang(int a[], int n)    ->  Prints array using pointer arithmetic *(a+i).
+  int main()                         ->  Demo of pointer usage + odd extraction.
+
+================================================================================
+  QUICK ALGORITHM REFERENCE
+================================================================================
+
+--- BUBBLE SORT ASCENDING ---
+  for (int i = 0; i < size - 1; i++)
+      for (int j = 0; j < size - 1 - i; j++)
+          if (a[j] > a[j+1]) { temp=a[j]; a[j]=a[j+1]; a[j+1]=temp; }
+  Files: Slot 13\ex1.c (out_ascen), Extra\Cheatsheet.c, Workshop4\Q3.c
+
+--- BUBBLE SORT DESCENDING ---
+  Same but: if (a[j] < a[j+1]) swap
+  Files: Slot 13\ex1.c (out_descen), Extra\Cheatsheet.c (BubbleSortDescending)
+
+--- BUBBLE SORT STRINGS (strcmp) ---
+  if (strcmp(arr[j], arr[j+1]) > 0) swap
+  Files: Slot 10\student_management.c, Workshops\Workshop 5\ex6.c
+
+--- LINEAR SEARCH ---
+  for (int i = 0; i < size; i++) if (a[i] == n) return i;
+  return -1;
+  Files: Slot 13\ex1.c (SearchArray), Extra\Cheatsheet.c, Slot 18\ex2.c (findID)
+
+--- PRIME CHECK ---
+  int isPrime(int n) { if (n<2) return 0; for(int i=2;i<=sqrt(n);i++) if(n%i==0) return 0; return 1; }
+  Files: Slot 13\ex0.c, Workshop 3\ex5.c, Extra\Cheatsheet.c, ProgressTest2\Q2.c
+
+--- RECURSIVE BINARY CONVERSION ---
+  void Convert(int n) { if(n==0) return; Convert(n/2); printf("%d", n%2); }
+  Files: Workshops\Workshop2\ex6.c, Extra\Cheatsheet.c
+
+--- GCD (EUCLIDEAN ALGORITHM) ---
+  while (b != 0) { int t = b; b = a % b; a = t; }  // a is GCD
+  Files: Workshops\Workshop2\ex8.c
+
+--- SWAP TWO INTEGERS ---
+  int temp = a; a = b; b = temp;    // direct
+  void swap(int *a, int *b) { int t=*a; *a=*b; *b=t; }  // via pointer
+  Files: Slot 16\ex5.c (swap2)
+
+--- REVERSE DIGITS ---
+  while (n != 0) { rev = rev*10 + n%10; n /= 10; }
+  Files: Workshops\Workshop2\ex4.c, Old Workshop3\ex4.c
+
+--- DIGIT SUM ---
+  int sum=0; n=abs(n); while(n>0) { sum+=n%10; n/=10; }
+  Files: ProgressTest\ProgressTest3\3\src\Q3.c
+
+--- REMOVE ELEMENT (SHIFT LEFT) ---
+  for (int j = idx; j < size-1; j++) a[j] = a[j+1];
+  return size - 1;
+  Files: Slot 13\ex1.c (Remove_First)
+
+--- STRING REVERSE (POINTER-BASED) ---
+  char *start=s, *end=s+strlen(s)-1;
+  while(start<end) { char t=*start; *start=*end; *end=t; start++; end--; }
+  Files: Slot 16\ex4.c
+
+--- PALINDROME CHECK ---
+  int l=0, r=strlen(s)-1;
+  while(l<r) { if(s[l]!=s[r]) return 0; l++; r--; } return 1;
+  Files: Workshops\Workshop 5\ex3.c
+
+--- INPUT VALIDATION LOOP ---
+  int x, check;
+  do { printf("Enter: "); check = scanf("%d", &x); while(getchar()!='\n'); }
+  while (check != 1 || x <= 0);
+  Files: Slot 12\ex1.c (InputCheck), Extra\Cheatsheet.c
+
+--- BINARY FILE I/O ---
+  FILE *f = fopen("data.bin", "wb");
+  fwrite(&product, sizeof(Product), 1, f);  // write
+  fread(&product, sizeof(Product), 1, f);   // read
+  fseek(f, offset * sizeof(Product), SEEK_SET);  // seek to record
+  Files: Slot 9\product_management.c
+
+--- TEXT FILE I/O (CSV) ---
+  FILE *f = fopen("data.txt", "r");
+  fscanf(f, "%d,%s,%f", &id, name, &gpa);  // read CSV
+  fprintf(f, "%d,%s,%.2f\n", id, name, gpa);  // write CSV
+  Files: Slot 10\student_management.c
+
+================================================================================
+  END OF TOC  |  Total: ~159 .c files | ~150+ functions | PRF192
+================================================================================
