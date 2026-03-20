@@ -301,6 +301,190 @@ void ASCIITable() {
 	}
 }
 
-//Lens
+//fgets + Dynamic Array + Lens + get rid of \n
+  char a[101];
+  fgets(a, sizeof(a), stdin);
+  int len = strlen(a);
+  
+
+  for(int i = 0; i < len; i++){
+    if(a[i] == '\n'){
+      a[i] = ' ';
+    }
+  }
+
+//Vowel count with tolower (Case insensitive)
+int VowelCount(char input[]){
+    int len = strlen(input);
+    int vowels = 0;
+    for (int i = 0; i < len; i++){
+        char c = tolower(*(input + i));
+        if (c == 'o' || c == 'e' || c == 'a' || c == 'i' || c == 'u'){
+            vowels++;
+        }
+    }
+    return vowels;
+}
+
+//Reverse a string in place (without using extra space) (Index)
+void Reverse(char input[]){
+    int len = strlen(input);
+    for(int i = 0; i < len/2; i++){
+        char temp = input[i];
+        input[i] = input[len - 1 - i];
+        input[len - 1 - i] = temp;
+    }
+    printf("%s", input);
+}
+
+//Reverse a string in place (without using extra space) (Pointer)
+void Reverse(char input[]){
+    char *start = input;
+    char *end = input + strlen(input) - 1;
+    char temp;
+    while(start < end){
+        temp = *start;
+        *start = *end;
+        *end = temp;   
+        start++;
+        end--;
+    }
+}
+
+//print a pyramid of stars with n levels
+void PrintPyramid(int n){
+  for(int i = 0; i < n; i++){
+    int space = n - 1 - i;
+    for (int s = 0; s < space; s++){
+      printf(" ");
+    }
+  
+
+    int stars = 2 * i + 1;
+    for (int s = 0; s < stars; s++) {
+        printf("*");
+    }
+  
+    if (i < n - 1) printf("\n");
+  }
+}
+
+//Remove \0 and \n from a string
+while (a[len] != '\0' && a[len] != '\n'){
+    len++;
+}
+
+//Palindrome check
+void PalindromeCheck(char a[]){
+    int len = strlen(a);
+    for(int i = 0; i < len/2; i++){
+        if(a[i] == a[len - 1 - i]){
+            flag = 1;
+        }       
+    }
+
+    if (flag == 1){
+        printf("yes");
+    }
+
+    else{
+        printf("no");
+    }
+}
+
+//Counts digits, letters, other chars using isdigit/isalpha
+void CountDigitsLetters(char a[]){
+    int len = strlen(a);
+    int letters = 0, digits = 0, others = 0;
+    for (int i = 0; i < len; i++) {
+        if (isalpha(a[i]))
+            letters++;
+        else if (isdigit(a[i]))
+            digits++;
+        else    
+            others++;
+    }
+}
+
+//Perfect number check
+void PerfectNumberCheck(int n){
+    int sum = 0;
+    for (int i = 1; i < n; i++){
+        if (n % i == 0){
+            sum += i;
+        }
+    }
+    if (sum == n){
+        printf("%d is a perfect number", n);
+    }
+    else{
+        printf("%d is not a perfect number", n);
+    }
+}
+
+//Display the difference between the max and min values in an array
+int findDifference(int a[], int n) {
+  int max = a[0];
+  for (int i = 0; i < n; i++){
+    if(max < a[i]){
+      max = a[i];
+    }
+  }
+
+  int min = a[0];
+  for (int i = 0; i < n; i++){
+    if(min > a[i]){
+      min = a[i];
+    }
+  }
+
+  int result = 0;
+  result = max - min;
+
+  return result;
+}
 
 //
+void swapMinMax(int a[], int n){
+  int max = 0;
+  for (int i = 0; i < n; i++){
+    if(a[max] < a[i]){
+      max = i;
+    }
+  }
+
+  int min = 0;
+  for (int i = 0; i < n; i++){
+    if(a[min] > a[i]){
+      min = i;
+    }
+  }
+
+  int temp = a[min];
+  a[min] = a[max];
+  a[max] = temp;
+
+  for (int i = 0; i < n; i++){
+    printf("%d ", a[i]);
+  }
+}
+
+//Cap the first two letters of each word in a string
+void CapFirstTwoLetters(char a[]){
+    int len = strlen(a);
+    int count = 0;
+    for(int i = 0; i < len; i++){
+        if(a[i] == ' '){
+          printf("%c", a[i]);
+          count = 0;
+        }
+        else if(count < 2){
+          printf("%c", toupper(a[i]));
+          count++;
+        }
+         else{
+          printf("%c", a[i]);
+          count++;
+        }
+    }
+}   
