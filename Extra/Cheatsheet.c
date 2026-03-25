@@ -444,7 +444,7 @@ int findDifference(int a[], int n) {
   return result;
 }
 
-//
+//Swap the smallest value with the largest value
 void swapMinMax(int a[], int n){
   int max = 0;
   for (int i = 0; i < n; i++){
