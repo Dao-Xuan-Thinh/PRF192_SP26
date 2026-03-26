@@ -1,0 +1,14 @@
+199,Xuan,Thinh,3.50
+189,Nguyen,Nhi,3.90
+127,Quang,Trung,3.20
+169,Le,Anh,3.00
+167,Si,Dop,3.70
+120,Anh,Nhien,3.80
+100,Tien,Manh,2.70
+158,Pham,Minh,3.60
+176,Tran,Ha,3.10
+133,Do,Khanh,3.85
+145,Vu,Hoang,2.95
+111,Bui,Thanh,3.40
+190,Ngoc,Linh,3.75
+121,Hoang,An,3.0580,Xuan,Bac,2.67
