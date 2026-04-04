@@ -11,4 +11,7 @@
 145,Vu,Hoang,2.95
 111,Bui,Thanh,3.40
 190,Ngoc,Linh,3.75
-121,Hoang,An,3.0580,Xuan,Bac,2.67
+121,Hoang,An,3.05
+80,Xuan,Bac,2.67
+500,Hoang,Linh,3.20
+125,Bich,Trang,4.00

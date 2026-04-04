@@ -14,7 +14,7 @@ typedef struct {
 
 void menu(){
     printf(
-        "--- Student Management System ---\n"
+        "\n--- Student Management System ---\n"
         "1. Add Student\n"
         "2. Search Student by ID\n"
         "3. Search Student by Last Name\n"
@@ -111,6 +111,7 @@ void search_by_last_name(char last_name[]){
     int count = loadStudents(students, MAX_STUDENTS);
     int found = 0;
  
+    //tbh just use EOF here no to declair max students, whatever just change it later
     for (int i = 0; i < count; i++) {
         if (strcmp(students[i].last_name, last_name) == 0) {
             //To make absolutely sure this print no matter what saved me some lines of code
